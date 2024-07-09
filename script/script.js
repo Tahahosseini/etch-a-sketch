@@ -41,65 +41,65 @@ btn.addEventListener("click", () => {
 
     if (userInput < 17 || userInput > 80) {
         alert("Choose a number between 17 and 80")
+        return;
     }
 
-    else {
-
-        if (count < 1) {
-            ++count
-            console.log(count)
-            rows.forEach((row) => {
-                canvas.removeChild(row)
-            })
-        }
-
-        // create the new rows
-        for (let i = 0; i < userInput; i++) {
-            let newRow = document.createElement("div")
-            newRow.classList.toggle("newrow")
-            newRow.style.cssText = "display: flex"
-            // newRow.style.minWidth = "100%"
-            // newRow.style.minHeight = "6.25%"
-            canvas.appendChild(newRow)
-        }
-
-        // calculate the number of new rows and the new height
-        let newRows = document.querySelectorAll(".newrow")
-        let numberOfRows = newRows.length
-        let newHeight = 100 / numberOfRows
-
-        // change the new row's heights to the new height
+    if (count >= 1) {
         newRows.forEach((newRow) => {
-            newRow.style.minWidth = "100%"
-            newRow.style.minHeight = `${newHeight}%`
+            canvas.removeChild(newRow)
         })
-
-        // create the new squares
-        newRows.forEach((row) => {
-            for (let i = 0; i < userInput; i++) {
-                let square = document.createElement("div")
-                square.classList.toggle("square")
-                square.style.cssText = "border: solid black 1px; flex: 1"
-                row.appendChild(square)
-            }
-        })
-
-        // mouse hover for the new squares
-        let newSquares = document.querySelectorAll(".square")
-        newSquares.forEach((newSquare => {
-            newSquare.addEventListener("mouseover", () => {
-                newSquare.style.backgroundColor = "black"
-            })
-        }))
-
-
-        if (count >= 1) {
-            newRows.forEach((newRow) => {
-                canvas.removeChild(newRow)
-            })
-        } else ++NewCount
-
     }
+
+    if (count === 0) {
+        ++count
+        rows.forEach((row) => {
+            canvas.removeChild(row)
+        })
+    }
+
+    // create the new rows
+    for (let i = 0; i < userInput; i++) {
+        let newRow = document.createElement("div")
+        newRow.classList.toggle("newrow")
+        newRow.style.cssText = "display: flex"
+        // newRow.style.minWidth = "100%"
+        // newRow.style.minHeight = "6.25%"
+        canvas.appendChild(newRow)
+    }
+
+    // calculate the number of new rows and the new height
+    let newRows = document.querySelectorAll(".newrow")
+    let numberOfRows = newRows.length
+    let newHeight = 100 / numberOfRows
+
+    // change the new row's heights to the new height
+    newRows.forEach((newRow) => {
+        newRow.style.minWidth = "100%"
+        newRow.style.minHeight = `${newHeight}%`
+    })
+
+    // create the new squares
+    newRows.forEach((row) => {
+        for (let i = 0; i < userInput; i++) {
+            let square = document.createElement("div")
+            square.classList.toggle("square")
+            square.style.cssText = "border: solid black 1px; flex: 1"
+            row.appendChild(square)
+        }
+    })
+
+    // mouse hover for the new squares
+    let newSquares = document.querySelectorAll(".square")
+    newSquares.forEach((newSquare => {
+        newSquare.addEventListener("mouseover", () => {
+            newSquare.style.backgroundColor = "black"
+        })
+    }))
+
+
+
+
+
 })
 // 640px wide
 
