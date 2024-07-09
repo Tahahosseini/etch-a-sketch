@@ -1,0 +1,16 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.full-width {
+    min-width: 100%;
+}
