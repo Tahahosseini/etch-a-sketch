@@ -2,3 +2,21 @@
     justify-content: center;
     align-items: center;
 }
+
+.btnCont {
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.btn {
+    padding: 10px 30px;
+    border: solid black 2px;
+    border-radius: 7px;
+    background-color: white; 
+}
+
+.btn:hover {
+    color: white;
+    background-color: black;
+}
