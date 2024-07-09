@@ -101,10 +101,13 @@ btn.addEventListener("click", () => {
 
 
 })
-// 640px wide
 
+// NOTE TO SELF
 
-// TO DO (in the function)
-// remove the Original Grid
-// create a for loop that creates n rows based on user input
-// create a for loop that creates n squares in each row based on user input
+// THE CODE DIDN'T WORK BECAUSE I WAS INCREMENTING TO THE COUNT BEFORE REACHING THE FUNCTION THAT REMOVES THE NEW ROWS.
+
+// SO WHEN THE OLD ROWS GOT REMOVED IT ADDED 1 TO THE COUNT AND THAT TRIGGERED THE REMOVE NEW ROWS SO IT INSTANTLY GOT REMOVED AFTER BEING CREATED.
+
+// ALSO THE COUNT VARIABLE NEEDED TO BE OUTSIDE THE EVENT LISTENER IDK WHY
+
+// CHATGPT EXPLANATION: If count were declared inside the event listener, it would reset to 0 each time the button is clicked, defeating the purpose of keeping track of the number of clicks.
