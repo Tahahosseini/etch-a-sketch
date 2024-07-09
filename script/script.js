@@ -15,7 +15,7 @@ rows.forEach((row) => {
     for (let i = 0; i <= 15; i++) {
         let square = document.createElement("div")
         square.classList.toggle("square")
-        square.style.cssText = "height : 25px; width : 25px; border: solid black 1px;"
+        square.style.cssText = "height : 50px; width : 50px; border: solid black 1px;"
         row.appendChild(square)
     }
 })
