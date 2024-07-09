@@ -43,4 +43,13 @@ btn.addEventListener("click", function input() {
 
 // 640px wide
 function changeDimension() {
+
+
+
+
 }
+
+// TO DO (in the function)
+// remove the Original Grid
+// create a for loop that creates n rows based on user input
+// create a for loop that creates n squares in each row based on user input
