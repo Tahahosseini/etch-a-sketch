@@ -44,12 +44,15 @@ btn.addEventListener("click", () => {
         return;
     }
 
+    // delete the new grid after the first change
     if (count >= 1) {
+        let newRows = document.querySelectorAll(".newrow")
         newRows.forEach((newRow) => {
             canvas.removeChild(newRow)
         })
     }
 
+    // delete the old grid
     if (count === 0) {
         ++count
         rows.forEach((row) => {
@@ -104,10 +107,14 @@ btn.addEventListener("click", () => {
 
 // NOTE TO SELF
 
-// THE CODE DIDN'T WORK BECAUSE I WAS INCREMENTING TO THE COUNT BEFORE REACHING THE FUNCTION THAT REMOVES THE NEW ROWS.
+// I WAS INCREMENTING TO THE COUNT BEFORE REACHING THE FUNCTION THAT REMOVES THE NEW ROWS.
 
 // SO WHEN THE OLD ROWS GOT REMOVED IT ADDED 1 TO THE COUNT AND THAT TRIGGERED THE REMOVE NEW ROWS SO IT INSTANTLY GOT REMOVED AFTER BEING CREATED.
 
 // ALSO THE COUNT VARIABLE NEEDED TO BE OUTSIDE THE EVENT LISTENER IDK WHY
 
 // CHATGPT EXPLANATION: If count were declared inside the event listener, it would reset to 0 each time the button is clicked, defeating the purpose of keeping track of the number of clicks.
+
+// ALSO: ANOTHER REASON WHY THE CODE BROKE WAS THAT I WAS TRYING TO ACCESS THE LIST OF THE NEW ROWS BEFORE I DECLARED IT. SO NOW WE HAVE TWO VARIABLES THAT CONTAIN THE SAME INFO.
+
+// MY BIGGEST PROBLEM WAS WITH THE LOGIC FLOW
