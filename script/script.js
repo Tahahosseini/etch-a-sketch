@@ -36,7 +36,7 @@ allSquares.forEach((square) => {
 let btn = document.querySelector(".btn")
 btn.addEventListener("click", function createNewGrid() {
     // get an input
-    let userInput = prompt("Enter a number between 16 and 100", 16)
+    let userInput = prompt("Enter a number between 17 and 80", 16)
 
     if (userInput < 17 || userInput > 80) {
         alert("Choose a number between 17 and 80")
